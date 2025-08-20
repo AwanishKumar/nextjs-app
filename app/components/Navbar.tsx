@@ -1,6 +1,6 @@
-'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -20,9 +20,9 @@ export default function Navbar() {
             <Link
               href="/"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                pathname === '/'
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                pathname === "/"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               }`}
             >
               Home
@@ -30,9 +30,9 @@ export default function Navbar() {
             <Link
               href="/about"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                pathname === '/about'
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                pathname === "/about"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               }`}
             >
               About
@@ -40,9 +40,9 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                pathname === '/contact'
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                pathname === "/contact"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               }`}
             >
               Contact
