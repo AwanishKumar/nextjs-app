@@ -12,7 +12,7 @@ export default function Navbar() {
           <div className="flex space-x-7">
             <div className="flex items-center">
               <Link href="/" className="text-xl font-bold text-gray-800">
-                Your Logo
+                Logo
               </Link>
             </div>
           </div>
@@ -36,6 +36,16 @@ export default function Navbar() {
               }`}
             >
               About
+            </Link>
+            <Link
+              href="/users"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                pathname === "/users"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              Users
             </Link>
             <Link
               href="/contact"
