@@ -7,10 +7,10 @@ export default async function users() {
   return (
     <div className="flex justify-start items-center">
       <ul className="mt-4">
-        {users.map((user: any) => {
+        {users.map((user: any, index: number) => {
           return (
             <li className="px-10 w-full" key={user.id}>
-              <Link href={`/users/${user.id}`} key={user.id}>
+              <Link href={`/users/${user.id}?seq=${index + 1}`} key={user.id}>
                 {user.name}
               </Link>
             </li>

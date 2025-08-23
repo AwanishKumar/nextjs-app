@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import FetchUser from "@/app/data/fetchUser";
+import Link from "next/link";
 
 export const generateMetadata = async ({
   params,
@@ -13,14 +14,28 @@ export const generateMetadata = async ({
   };
 };
 
-export default async function UserPage({ params }: { params: Promise<{ userid: string }> }) {
+export default async function UserPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ userid: string }>;
+  searchParams: Promise<{ seq: string }>;
+}) {
   const { userid } = await params;
+  const { seq } = await searchParams;
   const user = await FetchUser(userid);
 
   return (
-    <div className="min-h-screen p-8">
-      <main className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6">User Details</h1>
+    <div className="min-h-screen p-2">
+      <main className="ml-8">
+        <Link
+          href="/users"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 inline-block mb-4"
+        >
+          Back to User List
+        </Link>
+        <h1 className="text-2xl font-bold mb-6"> Sequence of current user is {seq}</h1>
+        <h2 className="text-xl font-bold mb-6">User Details</h2>
         <p className="text-lg">User ID: {userid}</p>
         <p className="text-lg">Name: {user.name}</p>
         <p className="text-lg">Email: {user.email}</p>
