@@ -31,3 +31,16 @@ Catch-all route segment
 
 Optional Catch-all Segments will  
  -- Addition to above, 'http://localhost:3000/shop' will render app/shop/[...slug]/page.tsx -- syntax [[...slug]]
+
+Private folder
+
+- Any folder with '\_' will not be considered as route
+  eg app/about/\_lib/page.tsx will not be accessible as 'localhost/about/\_lib' even if it has page.tsx
+
+Group route
+
+- to group route with same functionality, put inside (featureName) folder.
+  eg
+  app/(auth)/login/page.tsx ---- localhost/login
+  app/(auth)/register/page.tsx ---- localhost/register
+  app/(auth)/forgot-password/page.tsx ---- localhost/forgot-password
