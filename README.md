@@ -1,7 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
 First, run the development server:
 
 ```bash
@@ -14,23 +10,24 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App-router
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- it follows file based roting... starts from '/app' folder and look for page.tsx inside selected route path
+  eg - http://localhost:3000/about. -- will fetch data from app/about/page.tsx
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dynamic route
 
-## Learn More
+- we cannot create route for each child thus we create a dynamic route with '[keyName]'
+  eg- http://localhost:3000/users/1 -- will fetch data from app/users/[userId]/page.tsx -- to fetch the userId check the code
 
-To learn more about Next.js, take a look at the following resources:
+Catch-all route segment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- it catches all the nested routes after a perticula one , syntax. [...slug] --- slug is a standard name , it can be anythong.
+  eg
+  app/shop/[...slug]/page.js ---- /shop/a
+  app/shop/[...slug]/page.js ---- /shop/a/b
+  app/shop/[...slug]/page.js ---- /shop/a/b/c
+  Note; - in this case 'http://localhost:3000/shop' will not render app/shop/[...slug]/page.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optional Catch-all Segments will  
+ -- Addition to above, 'http://localhost:3000/shop' will render app/shop/[...slug]/page.tsx -- syntax [[...slug]]
