@@ -1,7 +1,11 @@
 "use client";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Contact() {
+  const router = useRouter();
+  const onClick = () => {
+    router.push("/");
+  };
   return (
     <div className="min-h-screen p-8">
       <main className="max-w-4xl mx-auto">
@@ -53,12 +57,12 @@ export default function Contact() {
           </form>
         </div>
         <div className="mt-8">
-          <Link
-            href="/"
+          <button
+            onClick={onClick}
             className="px-4 py-2 bg-blue-600 text-white-100 text-sm font-medium hover:bg-blue-700 rounded-md cursor-pointer"
           >
             Back to Home
-          </Link>
+          </button>
         </div>
       </main>
     </div>

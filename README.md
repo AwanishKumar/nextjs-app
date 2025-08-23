@@ -65,3 +65,16 @@ Params and Search params
 - layout.tsx has access to params only
 - page.tsx has access to params and searchParams
 - check app/user/id/page.tsx for syntax
+
+Programmatically navigate
+
+- we can use useRouter hook or redirect method directly from to navigate
+- import { useRouter, redirect } from "next/navigation";
+
+  - const router = useRouter();
+  - router.push("/");
+  - redirect('/');
+
+Template vs Layout
+
+- A template file is similar to a layout in that it wraps a layout or page. Unlike layouts that persist across routes and maintain state, templates are given a unique key, meaning children Client Components reset their state on navigation.
