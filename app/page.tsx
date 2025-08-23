@@ -1,6 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-
+export const metadata = {
+  title: "Home",
+  description: "Welcome to our website",
+};
 export default function Home() {
   return (
     <div className="min-h-screen p-8">

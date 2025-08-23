@@ -1,4 +1,17 @@
+import { Metadata } from "next";
 import FetchUser from "@/app/data/fetchUser";
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ userid: string }>;
+}): Promise<Metadata> => {
+  const user = await FetchUser((await params).userid);
+  return {
+    title: user.name,
+    description: `Details about ${user.name}`,
+  };
+};
 
 export default async function UserPage({ params }: { params: Promise<{ userid: string }> }) {
   const { userid } = await params;

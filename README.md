@@ -44,3 +44,17 @@ Group route
   app/(auth)/login/page.tsx ---- localhost/login
   app/(auth)/register/page.tsx ---- localhost/register
   app/(auth)/forgot-password/page.tsx ---- localhost/forgot-password
+
+Layout & Nested Layout
+
+- nextjs .. render the content of layout.tsx first and then replaces the {children} with page.tsx. It happens for all pages.
+- by default we have layout at root level any html/ component mentioned in this will render in all page ..like Navbar.
+  -- other pages can have layout.tsx as well like users
+
+Metadata - static and dynamic
+
+- we can have metadata associated with a page by declaring it static or dynamic
+- static
+  create a metadata variable and add required fields -- check app/layout
+  dynamic
+  create a generateMetada method -- name should be dame and return a Promise<Metadata> with required fields -- check app/users/[userId]/page.tsx

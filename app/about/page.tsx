@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "About",
+  description: "Welcome to About page",
+};
+
 export default async function About() {
   return (
     <div className="min-h-screen p-8">

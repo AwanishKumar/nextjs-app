@@ -38,6 +38,36 @@ export default function Navbar() {
               About
             </Link>
             <Link
+              href="/login"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                pathname === "/login"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              Login
+            </Link>
+            <Link
+              href="/register"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                pathname === "/register"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              Register
+            </Link>
+            <Link
+              href="/forgot-password"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                pathname === "/forgot-password"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              Forgot Password
+            </Link>
+            <Link
               href="/users"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 pathname === "/users"
