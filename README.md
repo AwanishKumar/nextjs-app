@@ -58,3 +58,10 @@ Metadata - static and dynamic
   create a metadata variable and add required fields -- check app/layout
   dynamic
   create a generateMetada method -- name should be dame and return a Promise<Metadata> with required fields -- check app/users/[userId]/page.tsx
+
+Params and Search params
+
+- by default these are passed as a props to the page/layout components in nextjs
+- layout.tsx has access to params only
+- page.tsx has access to params and searchParams
+- check app/user/id/page.tsx for syntax
